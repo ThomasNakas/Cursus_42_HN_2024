@@ -6,7 +6,7 @@
 /*   By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 08:42:55 by tnakas            #+#    #+#             */
-/*   Updated: 2024/03/11 10:33:51 by tnakas           ###   ########.fr       */
+/*   Updated: 2024/03/16 10:35:22 by tnakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	char	*sub_return;
+	char	*s_return;
 
 	if (!s)
 		return (NULL);
@@ -27,9 +27,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!sub)
 		return (NULL);
 	s += start;
-	sub_return = sub;
-	*(sub + len) = '\0';
+	s_return = sub;
 	while (len-- && *s)
 		*sub++ = *s++;
-	return (sub_return);
+	*sub = '\0';
+	return (s_return);
 }
