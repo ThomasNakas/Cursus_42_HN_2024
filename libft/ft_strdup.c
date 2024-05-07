@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 15:48:29 by tnakas            #+#    #+#             */
-/*   Updated: 2024/03/10 14:18:20 by tnakas           ###   ########.fr       */
+/*   Created: 2024/03/16 23:46:34 by tnakas            #+#    #+#             */
+/*   Updated: 2024/03/17 00:22:09 by tnakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char		*dest;
-	int			i;
-	int			j;
+	char		*res;
+	size_t		len;
+	size_t		i;
 
+	len = 0;
 	i = 0;
-	while (*(s1 + i))
-		i++;
-	dest = (char *)malloc(sizeof(char) * (i + 1));
-	if (!dest)
+	len = ft_strlen(s1);
+	res = (char *)malloc(sizeof(char) * (len + 1));
+	if (!res)
 		return (NULL);
-	j = -1;
-	while (s1[++j])
-		*(dest + j) = *(s1 + j);
-	*(dest + j) = '\0';
-	return (dest);
+	while (s1[i])
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
