@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 12:17:24 by tnakas            #+#    #+#             */
-/*   Updated: 2024/03/10 13:14:06 by tnakas           ###   ########.fr       */
+/*   Created: 2024/03/10 10:50:06 by tnakas            #+#    #+#             */
+/*   Updated: 2024/03/10 12:17:18 by tnakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_tolower(int c)
+//asigning new content and by null to the next pointer
+t_list	*ft_lstnew(void *content)
 {
-	int	i;
+	t_list	*new;
 
-	i = 0;
-	if (c >= 'A' && c <= 'Z')
-		c += 'a' - 'A';
-	return (c);
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

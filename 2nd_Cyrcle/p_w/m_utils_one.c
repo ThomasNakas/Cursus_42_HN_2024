@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   m_utils_one.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 16:05:01 by tnakas            #+#    #+#             */
-/*   Updated: 2024/05/07 16:45:05 by tnakas           ###   ########.fr       */
+/*   Created: 2024/06/02 12:39:49 by tnakas            #+#    #+#             */
+/*   Updated: 2024/06/07 15:40:15 by tnakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Let's see what options I have with the input
-// all Numbers: 1 2 3 44 5 6
-// string: "1 2 3 44 5 6"
-// mixed: "12 2 3" 4 6
-
-// my goal is to make them all integers and save them into the stack_a
-// if all the chars are from '0' to '9'
-// or we have all the spaces
-int	main(int argc, char **argv)
+int	m_abs(int a, int b)
 {
-	int	*stack_a;
-	int	*stack_b;
+	return ((a - b) * ((a - b >= 0) + (-1) * (a - b < 0)));
+}
 
-	ft_printf("Hello World!! with %d arg(s) and name '%s'\n", argc, argv[2]);
+int	m_psqrt(int a)
+{
+	int	i;
+
+	i = 1;
+	while ((i + 1) * (i + 1) <= a)
+		i++;
+	return (i + 1);
+}
+
+int	m_kvar(int a)
+{
+	return ((m_psqrt(a) * (13 / 10)));
 }
