@@ -6,7 +6,7 @@
 /*   By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:49:44 by tnakas            #+#    #+#             */
-/*   Updated: 2024/06/13 13:53:16 by tnakas           ###   ########.fr       */
+/*   Updated: 2024/06/14 11:53:18 by tnakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	move_map(mlx_key_data_t keydata, void *param)
 	t_fractol	*f;
 
 	f = (t_fractol *)param;
-	if (keydata.key == MLX_KEY_W)
-		f->up_down_shift -= f->shift_factor;
-	if (keydata.key == MLX_KEY_S)
-		f->up_down_shift += f->shift_factor;
-	if (keydata.key == MLX_KEY_A)
-		f->left_right_shift += f->shift_factor;
-	if (keydata.key == MLX_KEY_D)
-		f->left_right_shift -= f->shift_factor;
-	if (keydata.key == MLX_KEY_DOWN)
-		f->shift--;
 	if (keydata.key == MLX_KEY_UP)
+		f->up_down_shift -= f->shift_factor;
+	if (keydata.key == MLX_KEY_DOWN)
+		f->up_down_shift += f->shift_factor;
+	if (keydata.key == MLX_KEY_LEFT)
+		f->left_right_shift += f->shift_factor;
+	if (keydata.key == MLX_KEY_RIGHT)
+		f->left_right_shift -= f->shift_factor;
+	if (keydata.key == MLX_KEY_S)
+		f->shift--;
+	if (keydata.key == MLX_KEY_W)
 		f->shift++;
 	if (keydata.key == MLX_KEY_ESCAPE)
 	{
