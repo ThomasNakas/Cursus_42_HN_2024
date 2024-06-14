@@ -6,7 +6,7 @@
 /*   By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 13:35:15 by tnakas            #+#    #+#             */
-/*   Updated: 2024/06/12 20:48:58 by tnakas           ###   ########.fr       */
+/*   Updated: 2024/06/13 14:15:17 by tnakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,4 @@ int	is_valid(char *s)
 	if (s[i] != '\0' || atod(s) < -2.00 || atod(s) > 2.00)
 		error_message_is_valid();
 	return (1);
-}
-
-void	loop_delete_terminate(mlx_t *mlx, mlx_image_t *img)
-{
-	mlx_loop(mlx);
-	mlx_delete_image(mlx, img);
-	mlx_terminate(mlx);
 }

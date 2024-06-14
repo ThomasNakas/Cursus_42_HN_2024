@@ -6,7 +6,7 @@
 /*   By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 20:21:04 by tnakas            #+#    #+#             */
-/*   Updated: 2024/06/13 03:33:49 by tnakas           ###   ########.fr       */
+/*   Updated: 2024/06/13 14:16:20 by tnakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,7 @@ void		rendering(t_fractol *f, int argc, char **argv);
 void		error_message(void);
 void		error_message_is_valid(void);
 int			is_valid(char *s);
-void		loop_delete_terminate(mlx_t *mlx, mlx_image_t *img);
 //================HOOK_HANDLING=================
-void		move_one(mlx_key_data_t keydata, t_fractol *f, int flag);
 void		move_map(mlx_key_data_t keydata, void *param);
 void		zoom_one(double xdelta, double ydelta, void *param);
 // void		zoom_map(double xdelta, double ydelta, void *param);
