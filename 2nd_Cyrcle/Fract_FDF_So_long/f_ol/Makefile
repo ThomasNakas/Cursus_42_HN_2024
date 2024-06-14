@@ -6,7 +6,7 @@
 #    By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 01:02:31 by tnakas            #+#    #+#              #
-#    Updated: 2024/06/14 14:48:49 by tnakas           ###   ########.fr        #
+#    Updated: 2024/06/14 15:20:56 by tnakas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ LIBFT_DIR := ./libft
 FT_PRINTF_DIR := ./ft_printf
 HEADERS := -I ./include -I $(LIBMLX)/include -I $(LIBFT_DIR) \
            -I $(FT_PRINTF_DIR)
-LIBS := $(LIBMLX)/build/libmlx42.a -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw \
+LIBS := $(LIBMLX)/build/libmlx42.a -framework Cocoa -framework \
+		OpenGL -framework IOKit -Iinclude \
+		-lglfw -L"$ENV{HOME}/.brew/include/" \
         $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a
 SRC := $(wildcard ./src/*.c)
 OBJS_PATH := ./objs
