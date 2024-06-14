@@ -6,14 +6,14 @@
 #    By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 01:02:31 by tnakas            #+#    #+#              #
-#    Updated: 2024/06/14 12:34:39 by tnakas           ###   ########.fr        #
+#    Updated: 2024/06/14 14:48:49 by tnakas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
 NAME := fractol
 CC := cc
-CFLAGS := -Wextra -Wall -Werror -arch x86_64
+CFLAGS := -Wextra -Wall -Werror
 LIBMLX := ./MLX42
 LIBFT_DIR := ./libft
 FT_PRINTF_DIR := ./ft_printf
@@ -38,7 +38,6 @@ all: MLX42 $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a \
 
 libmlx:
 	@cmake -S $(LIBMLX) -B $(LIBMLX)/build \
-	-DCMAKE_OSX_ARCHITECTURES=x86_64 \
 	&& cmake --build $(LIBMLX)/build -j4 > /dev/null \
 	&& echo "$(BLUE)Library MLX42 compiled successfully!$(RESET)"
 
