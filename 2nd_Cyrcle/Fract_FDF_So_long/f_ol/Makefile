@@ -6,7 +6,7 @@
 #    By: tnakas <tnakas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/09 01:02:31 by tnakas            #+#    #+#              #
-#    Updated: 2024/06/13 04:35:25 by tnakas           ###   ########.fr        #
+#    Updated: 2024/06/14 12:34:39 by tnakas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,9 @@ CFLAGS := -Wextra -Wall -Werror -arch x86_64
 LIBMLX := ./MLX42
 LIBFT_DIR := ./libft
 FT_PRINTF_DIR := ./ft_printf
-
 HEADERS := -I ./include -I $(LIBMLX)/include -I $(LIBFT_DIR) \
            -I $(FT_PRINTF_DIR)
-LIBS := $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm \
+LIBS := $(LIBMLX)/build/libmlx42.a -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw \
         $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a
 SRC := $(wildcard ./src/*.c)
 OBJS_PATH := ./objs
